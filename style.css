@@ -1,0 +1,307 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    outline: none;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    color: hsl(0, 0%, 100%);
+}
+
+.attribution a { 
+    color: hsl(280, 87%, 65%); 
+}
+
+/* ========== */
+/* DARK THEME */
+/* ========== */
+
+body {
+    background-color: hsl(235, 21%, 11%);
+    background-image: url(images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: hsl(0, 0%, 100%);
+}
+
+.header>button{
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* INPUT */
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: hsl(235, 24%, 19%);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.checkbox {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid hsl(236, 9%, 61%);
+    margin-right: 20px;
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.checkbox img {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#inputBox {
+    background: none;
+    border: none;
+    font-size: 16px;
+    width: 90%;
+    color: hsl(0, 0%, 100%);
+}
+
+#inputBox::placeholder {
+    font-size: 16px;
+}
+
+/* TASK LIST */
+
+.taskbox {
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(0, 0%, 100%);
+    width: 700px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+ul li.task {
+    border-bottom: 1px solid hsla(237, 9%, 61%, 0.589);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.task.dragging {
+    opacity: 0.2;
+    border: 2px solid hsl(234, 73%, 63%);
+}
+
+ul li.task p {
+    cursor: pointer;
+}
+
+ul li.task .checkbox:hover {
+    border: 1px solid hsl(280, 87%, 65%);
+}
+
+.checked {
+    color: hsl(236, 9%, 61%);
+    text-decoration: line-through;
+}
+
+.checked .checkbox {
+    background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.checked .checkbox img {
+    display: block;
+}
+
+.cross {
+    display: none;
+    margin-left: auto;
+    padding: 10px;
+    cursor: pointer;
+}
+
+ul li.task:hover .cross {
+    display: inline;
+}
+
+.cross:hover {
+    background-color: hsla(240, 9%, 61%, 0.082);
+    border-radius: 50%;
+}
+
+/* BOTTOM PANEL */ 
+
+.bottom-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    color: hsla(237, 9%, 61%, 0.589);
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+}
+
+.toggle button, .clear {
+    color: hsla(237, 9%, 61%, 0.589);
+    font-size: 16px;
+}
+
+.toggle button:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+button.selected {
+    color: hsl(234, 73%, 63%);
+}
+
+.clear:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+
+P.info {
+    text-align: center;
+    margin: 40px 0;
+    color: hsla(240, 9%, 61%, 0.808);
+}
+
+
+/* =========== */
+/* LIGHT THEME */
+/* =========== */
+
+.light-mode {
+    background-color: hsl(0, 0%, 98%);
+    background-image: url(images/bg-desktop-light.jpg);
+}
+
+.light-mode h1 {
+    color: hsl(235, 21%, 11%);
+}
+
+.light-mode .input-box {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.light-mode #inputBox {
+    color: hsl(235, 21%, 11%);
+}
+
+.light-mode .taskbox {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(235, 21%, 11%);
+}
+
+.light-mode .bottom-panel {
+    color: hsl(235, 24%, 19%, 0.7);
+}
+
+.light-mode .toggle button, .light-mode .clear {
+    color: hsla(235, 24%, 19%, 0.7);
+    font-size: 16px;
+}
+
+.light-mode button.selected {
+    color: hsl(234, 73%, 63%);
+}
+
+.light-mode .toggle button:hover, .light-mode .clear:hover {
+    color: hsl(235, 21%, 11%);
+}
+
+.light-mode .attribution {
+    color: hsl(235, 21%, 11%);
+}
+
+/* ============= */
+/* SMALL SCREENS */
+/* ============= */
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-image: url(images/bg-mobile-dark.jpg);
+    }
+
+    .light-mode {
+        background-image: url(images/bg-mobile-light.jpg);
+    }
+
+    .taskbox {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .taskbox {
+        width: 300px;
+        background-color: rgba(240, 248, 255, 0);
+        box-shadow: none;
+    }
+
+    .toggle {
+        width: 100%;
+        grid-row: 2;
+        grid-column: 1 / span 2;
+        margin-top: 10px;
+    }
+
+    .tasks {
+        background-color: hsl(235, 24%, 19%);
+        border-radius: 6px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .light-mode .tasks {
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    .bottom-panel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: hsl(235, 24%, 19%);
+        margin-top: 30px;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .light-mode .bottom-panel {
+        background-color: hsl(0, 0%, 100%);
+    }
+}
