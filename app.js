@@ -10,7 +10,7 @@ const clearAll = document.getElementById("clear");
 let tasks = [];
 let draggedIndex = null;
 
-// 🟡 Add task on Enter
+// Add task on Enter
 inputBox.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && inputBox.value.trim()) {
     createTask(inputBox.value.trim());
@@ -18,14 +18,14 @@ inputBox.addEventListener("keydown", (e) => {
   }
 });
 
-// 🟡 Create new task
+// Create new task
 function createTask(text, completed = false) {
   tasks.push({ text, completed });
   renderTasks();
   saveData();
 }
 
-// 🟡 Render all tasks
+// Render all tasks
 function renderTasks() {
   listContainer.innerHTML = "";
 
@@ -93,19 +93,19 @@ function renderTasks() {
   applyFilter(currentFilter);
 }
 
-// 🟡 Update item count
+// Update item count
 function updateCount() {
   const activeCount = tasks.filter(t => !t.completed).length;
   itemCount.textContent = activeCount;
 }
 
-// 🟡 Save to localStorage
+// Save to localStorage
 function saveData() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
 }
 
-// 🟡 Load from localStorage
+// Load from localStorage
 function loadData() {
   const storedTasks = localStorage.getItem("tasks");
   if (storedTasks) tasks = JSON.parse(storedTasks);
@@ -119,7 +119,7 @@ function loadData() {
   renderTasks();
 }
 
-// 🟡 Theme toggle
+// Theme toggle
 themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
   themeBtn.innerHTML = document.body.classList.contains("light-mode")
@@ -128,7 +128,7 @@ themeBtn.addEventListener("click", () => {
   saveData();
 });
 
-// 🟡 Filters
+// Filters
 let currentFilter = "all";
 
 function applyFilter(type) {
@@ -148,12 +148,12 @@ filterAll.addEventListener("click", () => applyFilter("all"));
 filterActive.addEventListener("click", () => applyFilter("active"));
 filterCompleted.addEventListener("click", () => applyFilter("completed"));
 
-// 🟡 Clear completed
+// Clear completed
 clearAll.addEventListener("click", () => {
   tasks = tasks.filter(t => !t.completed);
   renderTasks();
   saveData();
 });
 
-// 🟡 Initialize app
+// Initialize app
 loadData();
