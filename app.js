@@ -6,9 +6,22 @@ const filterAll = document.getElementById("all");
 const filterActive = document.getElementById("active");
 const filterCompleted = document.getElementById("completed");
 const clearAll = document.getElementById("clear");
+const sortAlpha = document.getElementById("sortAlpha");
+
+sortAlpha.addEventListener("click", sortTasksAlphabetically);
 
 let tasks = [];
 let draggedIndex = null;
+let sortAsc = true;
+
+function sortTasksAlphabetically() {
+  tasks.sort((a, b) => {
+    return sortAsc ? a.text.localeCompare(b.text) : b.text.localeCompare(a.text);
+  });
+  sortAsc = !sortAsc;
+  renderTasks();
+  saveData();
+}
 
 // Add task on Enter
 inputBox.addEventListener("keydown", (e) => {

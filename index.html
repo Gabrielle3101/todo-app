@@ -17,8 +17,8 @@
       <button id="theme"><img src="images/icon-sun.svg" alt=""></button>
     </div>
     <div class="input-box">
-      <div class="checkbox"><img src="images/icon-check.svg" alt=""></div>
-      <input type="text" name="todo" placeholder="Create a new todo..." id="inputBox">
+      <!-- <div class="checkbox"><img src="images/icon-check.svg" alt=""></div> -->
+      <input autocomplete="off" type="text" name="todo" placeholder="Create a new todo..." id="inputBox">
     </div>
     <div class="taskbox">
       <div class="tasks">
@@ -26,11 +26,12 @@
         </ul>
       </div>
       <div class="bottom-panel">
-        <p class="item-count"><span id="itemCount">0</span> units left</p>
+        <p class="item-count"><span id="itemCount">0</span> items left</p>
         <div class="toggle">
           <button id="all" class="selected">All</button>
           <button id="active">Active</button>
           <button id="completed">Completed</button>
+          <button id="sortAlpha">Sort</button>
         </div>
         <button id="clear" class="clear">Clear Completed</button>
       </div>
