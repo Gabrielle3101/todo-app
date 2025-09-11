@@ -91,10 +91,13 @@ function renderTasks() {
     cross.alt = "delete";
     cross.className = "cross";
     cross.addEventListener("click", () => {
-      tasks.splice(index, 1);
-      renderTasks();
-      saveData();
-    });
+      li.classList.add("removing");
+      setTimeout(() => {
+        tasks.splice(index, 1);
+        renderTasks();
+        saveData();
+      }, 500);
+    });    
 
     li.appendChild(checkbox);
     li.appendChild(p);

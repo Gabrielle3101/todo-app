@@ -202,6 +202,30 @@ P.info {
     color: hsla(240, 9%, 61%, 0.808);
 }
 
+/* Animate task entry */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .task {
+    animation: fadeInUp 0.5s ease-out;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Animate task removal */
+  .task.removing {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+
 
 /* =========== */
 /* LIGHT THEME */
